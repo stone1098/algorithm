@@ -7,9 +7,8 @@ N개의 회의에 대하여 회의실 사용표를 만들려고 한다.
 '''
 
 '''
-1. 종료 시간을 기준으로 정렬
-2. 다시 시작 시간을 기준으로 정렬
-3. 그 후 종료 시간이 다음 회의의 시작 시간보다 작거나 같으면 회의 추가
+1. 종료 시간을 기준으로 정렬하되, 종료 시간이 같으면 시작 시간을 기준으로 정렬
+2. 그 후 종료 시간이 다음 회의의 시작 시간보다 작거나 같으면 회의 추가
 '''
 
 import sys
@@ -20,14 +19,13 @@ meetings = []
 for i in range(n):
     meetings.append(list(map(int, sys.stdin.readline().split())))
 
-
 meetings = sorted(meetings, key=lambda x : (x[1], x[0]))
-
 result = 0
 end = 0
+
 for m in meetings:
     if m[0] >= end:
         result += 1
         end = m[1]
-        
+
 print(result)
