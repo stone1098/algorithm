@@ -13,10 +13,9 @@ edge = int(sys.stdin.readline())
 graph = [[] for _ in range(num+1)]
 for i in range(edge):
     a, b = map(int, sys.stdin.readline().split())
-    print(a, b)
     graph[a].append(b)
     graph[b].append(a)
-
+    
 visited = [False] * (num+1)
 
 def func(graph, num, visited):
@@ -27,5 +26,3 @@ def func(graph, num, visited):
             
 func(graph, 1, visited)
 print(visited.count(True)-1)
-
-print(graph)

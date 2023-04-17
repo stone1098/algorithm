@@ -13,7 +13,6 @@
 3. n[i]+n[i+1]과 n[i+1]+n[i]을 비교했지만 또 시간초과 발생 (버블소트)
 '''
 
-def solution(numbers): 
+def solution(numbers):
     return str(int("".join(sorted(list(map(str, numbers)), key=lambda x: (x*3), reverse=True))))
-
 print(solution([3, 30, 34, 5, 9]))
