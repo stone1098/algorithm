@@ -24,12 +24,6 @@ lan_list = []
 for _ in range(k):
     lan_list.append(int(sys.stdin.readline()))
 
-# k, n = 4, 11
-# lan_list = [802, 743, 457, 539]
-
-# k, n = 5, 10
-# lan_list = [1, 100, 100, 100, 100]
-
 l = 1
 r = max(lan_list)
 
