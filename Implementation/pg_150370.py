@@ -17,7 +17,7 @@
 수집된 개인정보의 정보를 담은 1차원 문자열 배열 privacies가 매개변수로 주어집니다. 
 이때 파기해야 할 개인정보의 번호를 오름차순으로 1차원 정수 배열에 담아 return 하도록 solution 함수를 완성해 주세요.
 
-# datetime 사용?
+# datetime 사용
 1. terms를 딕셔너리 형태로 기간 테이블 생성
 2. privacies에서 month를 더해 today와 비교
 '''
