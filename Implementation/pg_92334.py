@@ -21,9 +21,7 @@ def solution(id_list, report, k):
 
     member_len = len(id_list)
 
-    report_list = []
-    for _ in member_len:
-        report_list.append(set())
+    report_list = [set() for _ in range(member_len)]
 
     for r in report:
         reporter, respondent = r.split(" ")
