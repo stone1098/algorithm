@@ -14,9 +14,9 @@ def solution(msg):
             words.append(word)
             answer.append(words.index(word[:-1]) + 1)
             word = m
-            
+
     answer.append(words.index(word) + 1)
-          
+    
     return answer
 
 print(solution('KAKAO')) # return [11, 1, 27, 15]
