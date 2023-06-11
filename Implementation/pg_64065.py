@@ -1,5 +1,7 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/64065
 
+# sort(key=len)도 가능
+
 def solution(s):
     answer = []
     
