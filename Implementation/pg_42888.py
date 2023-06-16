@@ -10,16 +10,14 @@ def solution(record):
 
         if temp[0] == 'Enter':
             id_dict[temp[1]] = temp[2]
-            action_list.append([temp[1], temp[0]])
+            action_list.append([temp[1], '님이 들어왔습니다.'])
         elif temp[0] == 'Change':
             id_dict[temp[1]] = temp[2]
         elif temp[0] == 'Leave':
-            action_list.append([temp[1], temp[0]])
-
-    action_dict = {'Enter' : '들어왔습니다.', 'Leave' : '나갔습니다.'}
+            action_list.append([temp[1], '님이 나갔습니다.'])
 
     for a in action_list:
-        answer.append(f"{id_dict.get(a[0])}님이 {action_dict.get(a[1])}")
+        answer.append(f"{id_dict.get(a[0])}{a[1]}")
 
     return answer
 
