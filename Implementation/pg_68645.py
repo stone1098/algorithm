@@ -1,7 +1,4 @@
-'''
-1. 각 방의 1번부터 n번까지 숫자 부여 (start_idx=0 ~ n-1 사용)
-2. level이 n이면 n까지
-'''
+# https://school.programmers.co.kr/learn/courses/30/lessons/68645
 
 def solution(n):    
     tri = [[0] * i for i in range(1, n+1)]
