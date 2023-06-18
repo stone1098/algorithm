@@ -1,3 +1,5 @@
+# https://school.programmers.co.kr/learn/courses/30/lessons/118667
+
 from collections import deque
 
 def solution(queue1, queue2):
