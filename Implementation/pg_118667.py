@@ -10,7 +10,7 @@ def solution(queue1, queue2):
     sum_q1 = sum(q1)
     sum_q2 = sum(q2)
 
-    if (sum_q1+sum_q2)%2==1 or (sum_q1+sum_q2)==0:
+    if (sum_q1+sum_q2)%2==1:
         return -1
     
     max = len(q1) * 4
