@@ -1,3 +1,5 @@
+# https://school.programmers.co.kr/learn/courses/30/lessons/87390
+
 from collections import deque
 
 def solution(n, left, right):
