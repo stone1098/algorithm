@@ -29,40 +29,30 @@ input = sys.stdin.readline
 INF = sys.maxsize
 
 def solution(row, column, rooms):
-
-    wall = 0
-    q = list()
-    heapq.heappush(q, (wall, 0, 0))
-
     visited = [[INF] * column for _ in range(row)]
+    visited[0][0] = 0
+
+    q = list()
+    cost = 0
+    heapq.heappush(q, (cost, 0, 0))
 
     while q:
-        wall, r, c = heapq.heappop(q)
-        visited[r][c] = wall
+        cost, r, c = heapq.heappop(q)
+        if r==row-1 and c==column-1:
+            return cost
 
-        if r == row-1 and c == column-1:
-            return wall
-
-        if r+1 < row:
-            if rooms[r+1][c] == 0 and visited[r+1][c] > wall:
-                heapq.heappush(q, (wall, r+1, c))
-            elif visited[r+1][c] > wall+1:
-                heapq.heappush(q, (wall+1, r+1, c))
-        if c+1 < column:
-            if rooms[r][c+1] == 0 and visited[r][c+1] > wall:
-                heapq.heappush(q, (wall, r, c+1))
-            elif visited[r][c+1] > wall+1:
-                heapq.heappush(q, (wall+1, r, c+1))
-        if r-1 >= 0:
-            if rooms[r-1][c] == 0 and visited[r-1][c] > wall:
-                heapq.heappush(q, (wall, r-1, c))
-            elif visited[r-1][c] > wall+1:
-                heapq.heappush(q, (wall+1, r-1, c))
-        if c-1 >= 0:
-            if rooms[r][c-1] == 0 and visited[r][c-1] > wall:
-                heapq.heappush(q, (wall, r, c-1))
-            elif visited[r][c-1] > wall+1:
-                heapq.heappush(q, (wall+1, r, c-1))
+        if r+1 < row and visited[r+1][c] > visited[r][c] + rooms[r+1][c]:
+            visited[r+1][c] = visited[r][c] + rooms[r+1][c]
+            heapq.heappush(q, (visited[r+1][c], r+1, c))
+        if c+1 < column and visited[r][c+1] > visited[r][c] + rooms[r][c+1]:
+            visited[r][c+1] = visited[r][c] + rooms[r][c+1]
+            heapq.heappush(q, (visited[r][c+1], r, c+1))
+        if r-1 >= 0 and visited[r-1][c] > visited[r][c] + rooms[r-1][c]:
+            visited[r-1][c] = visited[r][c] + rooms[r-1][c]
+            heapq.heappush(q, (visited[r-1][c], r-1, c))
+        if c-1 >= 0 and visited[r][c-1] > visited[r][c] + rooms[r][c-1]:
+            visited[r][c-1] = visited[r][c] + rooms[r][c-1]
+            heapq.heappush(q, (visited[r][c-1], r, c-1))
     
     return -1
 
