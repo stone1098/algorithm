@@ -21,7 +21,7 @@ coins = []
 for _ in range(n):
     coins.append(int(input()))
 
-dp = [0] * 20000
+dp = [0] * (k+1)
 
 for coin in coins:
     if coin <= k:
